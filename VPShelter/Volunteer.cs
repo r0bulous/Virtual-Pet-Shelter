@@ -10,12 +10,21 @@ namespace VPShelter
     {
         public bool weekendAvailibility { get; set; } // additional property
 
-        public static void WaterAllPets() // Feeds all pets
+        public static void WaterAllPets() // Waters all pets
         {
             VirtualPetShelter.thirstList.Clear();
             VirtualPetShelter.thirstList.Add(0);
             VirtualPetShelter.thirstList.Add(0);
             VirtualPetShelter.thirstList.Add(0);
+            Console.WriteLine(VirtualPetShelter.thirstList.Count); // test
+        }
+
+        public static void FeedAllPets() // Feeds all pets
+        {
+            VirtualPetShelter.hungerList.Clear();
+            VirtualPetShelter.hungerList.Add(0);
+            VirtualPetShelter.hungerList.Add(0);
+            VirtualPetShelter.hungerList.Add(0);
         }
 
 
