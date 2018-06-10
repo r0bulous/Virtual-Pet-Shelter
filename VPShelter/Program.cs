@@ -16,6 +16,7 @@ namespace VPShelter
             //Local variables 
             int userResponse;
             string exitMainMenu = "no";
+            int volunteerMenu;
 
             //Starting menu while loop
 
@@ -30,17 +31,39 @@ namespace VPShelter
                 //Logic to enter do while loop. 
                 if (userResponse == 1)
                 {
-                    Console.WriteLine("Oh, I see you're a manager.");
+                    Console.WriteLine("Welcome, manager!");
                 }
                 if (userResponse == 2)
-                {
-                    Console.WriteLine("Welcome! Thanks for volunteering.");
-                }
-                else
-                {
-                    Console.WriteLine("Sorry, we only support managers and volunteers right now.");
-                    break;
-                }
+
+                    do
+                    {
+                        Console.WriteLine("Welcome! Thanks for volunteering.");
+                        {
+                            Console.WriteLine("What would you like to do?");
+                            Console.WriteLine("Enter 1 to water all the pets.");
+                            Console.WriteLine("Enter 2 to feed all the pets.");
+                            Console.WriteLine("Enter 3 to feed a specific pet.");
+                            volunteerMenu = int.Parse(Console.ReadLine());
+
+                            // Functionality for volunteer menu
+
+                            if (volunteerMenu == 1)
+                            {
+                                Volunteer.WaterAllPets(); // Method call to water all the pets
+                                Console.WriteLine("All the pets are well hydrated!"); 
+                                // Console.WriteLine("Current thirst levels: ");
+                                // Console.WriteLine("{0} {1} {2}", VirtualPetShelter.thirstList[0], VirtualPetShelter.thirstList[1], VirtualPetShelter.thirstList[2]); // Shows water status
+                            }
+
+
+
+                            else
+                            {
+                                Console.WriteLine("Sorry, we only support managers and volunteers right now.");
+                                break;
+                            }
+                        }
+                    } while (volunteerMenu == 2); //End of do while loop
             }
         }
     }
