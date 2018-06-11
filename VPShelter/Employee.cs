@@ -12,7 +12,7 @@ namespace VPShelter
 
         public Employee()
         {
-          // Default Constructor
+            // Default Constructor
         }
 
         public Employee(string employeeID) // Constructor for employee ID
@@ -20,20 +20,10 @@ namespace VPShelter
             this.EmployeeID = employeeID;
         }
 
-        public void ClockIn() // Save for abstract method
-        {
 
-        }
 
-        public void ShowID() // Save for abstract method
-        {
-
-        }
-
+        // Abstract methods as required by project description
+        // public abstract void ClockIn();
+        // public abstract void CheckID();
     }
-
-    }
-
-// The Employee base class MUST include:
-// DONE [ ] One property(perhaps EmployeeID) 
-// NEED TO FINISH [ ] Two abstract methods(for example, ClockIn() or ShowID()).
+}

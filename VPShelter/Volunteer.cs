@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 
 namespace VPShelter
 {
-    class Volunteer : Employee // Class derived from Employee
+    public class Volunteer : Employee // Class derived from Employee
     {
         public bool weekendAvailibility { get; set; } // additional property
 
-        public static void WaterAllPets() // Waters all pets
+        public static void WaterAllPets() // Waters all pets -- tried to get this to work with override method
         {
             VirtualPetShelter.thirstList.Clear();
             VirtualPetShelter.thirstList.Add(0);
             VirtualPetShelter.thirstList.Add(0);
             VirtualPetShelter.thirstList.Add(0);
-            Console.WriteLine(VirtualPetShelter.thirstList.Count); // test
         }
 
-        public static void FeedAllPets() // Feeds all pets
+        public static void FeedAllPets() // Feeds all pets -- tried to get this to work with override method
         {
             VirtualPetShelter.hungerList.Clear();
             VirtualPetShelter.hungerList.Add(0);
@@ -27,7 +26,17 @@ namespace VPShelter
             VirtualPetShelter.hungerList.Add(0);
         }
 
+        // Added this to meet requriements for an override method. Couldn't successfully call above methods as override methods.
 
+        //public override string ClockIn()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        // public override string CheckID()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 
 }

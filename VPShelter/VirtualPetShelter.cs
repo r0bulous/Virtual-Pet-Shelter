@@ -14,7 +14,7 @@ namespace VPShelter
         public int thirst { get; set; }
         public int hunger { get; set; }
         public int boredom { get; set; }
-        public List<string> PetList { get; set; } // field/property for PetList
+        // public List<string> PetList { get; set; } // field/property for PetList
         public List<int> ThirstList { get; set; } // field/property for ThirstList
         public List<int> HungerList { get; set; } // field/property for HungerList
         public List<int> BoredList { get; set; } // field/property for BoredList
@@ -36,11 +36,11 @@ namespace VPShelter
         // Create lists of pets and status
         // How to get this to stop resetting after every loop?
 
-        public static List<string> petList = new List<string>() { "Mittens", "Kimbop", "Oscar", }; // Updated to reflect list of types rather than objects and add pet names
-        public static List<int> thirstList = new List<int>(); // { 5, 5, 5 };
-        public static List<int> hungerList = new List<int>(); // { 5, 5, 5 };
-        public static List<int> boredList = new List<int>(); // { 5, 5, 5 };
-        public static List<bool> adoptedList = new List<bool>(); // { false, false, false };
+        // public static List<string> petList = new List<string>() { "Mittens", "Kimbop", "Oscar", };
+        public static List<int> thirstList = new List<int>();
+        public static List<int> hungerList = new List<int>();
+        public static List<int> boredList = new List<int>();
+        public static List<bool> adoptedList = new List<bool>(); 
 
         // Create employee list
 
