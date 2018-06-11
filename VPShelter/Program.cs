@@ -18,16 +18,11 @@ namespace VPShelter
             string petToPlay;
             string adoptChoice = "";
 
-
-
             // Calls method to populates the initial pet statuses based on starting values from VirtualPet
 
             VirtualPet.InitialStatus();
 
-
-
-
-            // Begin User Interface
+            // UI STARTS HERE
 
             // While loop/start program
 
@@ -48,6 +43,7 @@ namespace VPShelter
 
 
                     // Shows status of pets. Names come from VirtualPet class, others from VirtualPetShelter
+
                     string pet0Status = $"{VirtualPet.petList[0]}: Thirst: {VirtualPetShelter.thirstList[0]} Hunger: {VirtualPetShelter.hungerList[0]} Boredom: {VirtualPetShelter.boredList[0]} Adopted: {VirtualPetShelter.adoptedList[0]}";
                     string pet1Status = $"{VirtualPet.petList[1]}: Thirst: {VirtualPetShelter.thirstList[1]} Hunger: {VirtualPetShelter.hungerList[1]} Boredom: {VirtualPetShelter.boredList[1]} Adopted: {VirtualPetShelter.adoptedList[1]}";
                     string pet2Status = $"{VirtualPet.petList[2]}: Thirst: {VirtualPetShelter.thirstList[2]} Hunger: {VirtualPetShelter.hungerList[2]} Boredom: {VirtualPetShelter.boredList[2]} Adopted: {VirtualPetShelter.adoptedList[2]}";
@@ -67,8 +63,15 @@ namespace VPShelter
                     Console.WriteLine("Enter 1 to water all the pets.");
                     Console.WriteLine("Enter 2 to feed all the pets.");
                     Console.WriteLine("Enter 3 to play with a specific pet.");
+                    Console.WriteLine("Enter C to have your ID checked.");
                     Console.WriteLine("Enter 4 to quit.");
                     volunteerMenu = (Console.ReadLine());
+
+                    if (volunteerMenu.Equals("C"))
+                    {
+                        Volunteer tina = new Volunteer();
+                        tina.CheckID();
+                    }
 
                     if (volunteerMenu.Equals("1"))
                     {
@@ -114,17 +117,15 @@ namespace VPShelter
                     }
                 }
 
-
-
-
-                if (roleResponse.Equals("2"))
+                while (roleResponse.Equals("2"))
                 {
                     Console.WriteLine("* Pet Shelter Management Dashboard *");
                     Console.WriteLine();
                     Console.WriteLine("What would you like to do?");
                     Console.WriteLine("Enter 1 to view the status of all pets.");
                     Console.WriteLine("Enter 2 to adopt pets.");
-                    Console.WriteLine("Enter 3 to quit.");
+                    Console.WriteLine("Enter 3 to check ID.");
+                    Console.WriteLine("Enter 4 to quit.");
                     Console.Write("> ");
                     managerMenu = (Console.ReadLine());
 
@@ -145,76 +146,62 @@ namespace VPShelter
 
                     }
 
+
+
                     if (managerMenu.Equals("3"))
                     {
-                        Console.WriteLine("Take it easy!");
-                        return;
+                        Manager ted = new Manager();
+                        ted.CheckID();
                     }
 
 
-                    if (managerMenu.Equals("2"))
-                    {
-                        Console.WriteLine("We have the following pets today:");
-                        Console.WriteLine();
-                        Console.WriteLine("1: {0} is a {1} who {2} and lives off a diet of {3}.", VirtualPet.petList[0], VirtualPetDetails.petTypeList[0], VirtualPet.petDescriptList[0], VirtualPetDetails.petFoodList[0]);
-                        Console.WriteLine("2: {0} is a {1} who {2} and lives off a diet of {3}.", VirtualPet.petList[1], VirtualPetDetails.petTypeList[1], VirtualPet.petDescriptList[1], VirtualPetDetails.petFoodList[1]);
-                        Console.WriteLine("1: {0} is a {1} who {2} and lives off a diet of {3}.", VirtualPet.petList[2], VirtualPetDetails.petTypeList[2], VirtualPet.petDescriptList[2], VirtualPetDetails.petFoodList[2]);
-                        Console.WriteLine("Which pet is the client most interested in? Enter 1, 2, or 3.");
-                        Console.Write("> ");
-                        adoptChoice = (Console.ReadLine());
-                        
-                        // Options to place pets
-                        if (adoptChoice.Equals("1"))
+
+
+                        if (managerMenu.Equals("2"))
                         {
-                            Console.WriteLine("You successfully placed {0}. Enjoy the rest of your day!", (VirtualPet.petList[0]));
-                            Manager.AdoptPet(); // Calls AdoptPet method in Manager class
-                        }
+                            Console.WriteLine("We have the following pets today:");
+                            Console.WriteLine();
+                            Console.WriteLine("1: {0} is a {1} who {2} and lives off a diet of {3}.", VirtualPet.petList[0], VirtualPetDetails.petTypeList[0], VirtualPet.petDescriptList[0], VirtualPetDetails.petFoodList[0]);
+                            Console.WriteLine("2: {0} is a {1} who {2} and lives off a diet of {3}.", VirtualPet.petList[1], VirtualPetDetails.petTypeList[1], VirtualPet.petDescriptList[1], VirtualPetDetails.petFoodList[1]);
+                            Console.WriteLine("1: {0} is a {1} who {2} and lives off a diet of {3}.", VirtualPet.petList[2], VirtualPetDetails.petTypeList[2], VirtualPet.petDescriptList[2], VirtualPetDetails.petFoodList[2]);
+                            Console.WriteLine("Which pet is the client most interested in? Enter 1, 2, or 3.");
+                            Console.Write("> ");
+                            adoptChoice = (Console.ReadLine());
 
-                        if (adoptChoice.Equals("2"))
+                            // Options to place pets
+                            if (adoptChoice.Equals("1"))
+                            {
+                                Console.WriteLine("You successfully placed {0}. Enjoy the rest of your day!", (VirtualPet.petList[0]));
+                                Manager.AdoptPet(); // Calls AdoptPet method in Manager class
+                            }
+
+                            if (adoptChoice.Equals("2"))
+                            {
+                                Console.WriteLine("You adopted out {0}. Nice work!", (VirtualPet.petList[0]));
+                                Manager.AdoptPet(); // Calls AdoptPet method in Manager class
+                            }
+
+
+                            if (adoptChoice.Equals("3"))
+                            {
+                                Console.WriteLine("You adopted {0}. Maybe it's time for a nap?", (VirtualPet.petList[2]));
+                                Manager.AdoptPet(); // Calls AdoptPet method in Manager class
+                            }
+
+
+
+                        }
+                        if (managerMenu.Equals("4"))
                         {
-                            Console.WriteLine("You adopted out {0}. Now let a volunteer do some work!", (VirtualPet.petList[1]));
-                            Manager.AdoptPet(); // Calls AdoptPet method in Manager class
+                            Console.WriteLine("Have a great day!");
+                            return;
                         }
-
-                        if (adoptChoice.Equals("3"))
-                        {
-                            Console.WriteLine("You adopted {0}. Maybe it's time for a nap?", (VirtualPet.petList[2]));
-                            Manager.AdoptPet(); // Calls AdoptPet method in Manager class
-                        }
-
-
-
 
                     }
+
                 }
 
 
-
-
-                    // Functionality for volunteer menu
-
-                    //if (volunteerMenu.Equals("1"))
-                    // {
-                    //    Volunteer.WaterAllPets(); // Method call to water all the pets
-                    //    Console.WriteLine("All the pets are hydrated!");
-                    //    // Console.WriteLine("Current thirst levels: ");
-                    //    // Console.WriteLine("{0} {1} {2}", VirtualPetShelter.thirstList[0], VirtualPetShelter.thirstList[1], VirtualPetShelter.thirstList[2]); // Shows water status
-                    //}
-
-                    //if (volunteerMenu.Equals("2"))
-                    //{
-                    //    Volunteer.WaterAllPets(); // Method call to feed all the pets
-                    //    Console.WriteLine("All the pets have been fed!");
-                    //    // Console.WriteLine("Current thirst levels: ");
-                    //    // Console.WriteLine("{0} {1} {2}", VirtualPetShelter.thirstList[0], VirtualPetShelter.thirstList[1], VirtualPetShelter.thirstList[2]); // Shows water status
-                }
-
-
-
-                //else
-                //{
-                //    Console.WriteLine("Sorry, we only support managers and volunteers right now.");
-                //    break;
             }
 
         }

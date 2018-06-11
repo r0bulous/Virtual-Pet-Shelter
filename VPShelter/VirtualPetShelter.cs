@@ -14,6 +14,7 @@ namespace VPShelter
         public int thirst { get; set; }
         public int hunger { get; set; }
         public int boredom { get; set; }
+
         // public List<string> PetList { get; set; } // field/property for PetList
         public List<int> ThirstList { get; set; } // field/property for ThirstList
         public List<int> HungerList { get; set; } // field/property for HungerList
@@ -33,8 +34,7 @@ namespace VPShelter
             // Default constructor
         }
 
-        // Create lists of pets and status
-        // How to get this to stop resetting after every loop?
+        // Create lists of pets and pet status indicators
 
         // public static List<string> petList = new List<string>() { "Mittens", "Kimbop", "Oscar", };
         public static List<int> thirstList = new List<int>();
@@ -44,16 +44,7 @@ namespace VPShelter
 
         // Create employee list
 
-        public List<string> employeeList = new List<string>() { "Frank", "Betsy", "Pamela", "Charles", }; // Updated to reflect list of types rather than objects and add employee names
+        public static List<string> employeeList = new List<string>() { "Frank", "Betsy", "Pamela", "Charles", }; // Updated to reflect list of types rather than objects and add employee names
     }
-
-   
-
+       
   }
-
-
-
-
-//The VirtualPetShelter class MUST include the appropriate instance variable(s) (fields/properties) to store the pets who reside at the shelter.
-//The VirtualPetShelter class MUST include the appropriate instance variable(s) (fields/properties) to store all of the employees who volunteer or work at the shelter.
-//HINT: Don't overthink this class. You might not instantiate an object from this class in your program. This class allows us to see your ability to appropriately use Lists.

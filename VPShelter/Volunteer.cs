@@ -28,15 +28,15 @@ namespace VPShelter
 
         // Added this to meet requriements for an override method. Couldn't successfully call above methods as override methods.
 
-        //public override string ClockIn()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public override void ClockIn()
+        {
+            Console.WriteLine("Welcome. Too bad you're not getting paid!");
+        }
 
-        // public override string CheckID()
-        //{
-        //    throw new NotImplementedException();
-        //}
+        public override void CheckID()
+        {
+            Console.WriteLine("That ID looks suspicious. Please forward it to a manager!");
+        }
     }
 
 }

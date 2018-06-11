@@ -13,17 +13,22 @@ namespace VPShelter
         public static bool didAdopt;
 
 
-        public static void AdoptPet() // Method to initiate pet adoption
+        public static void AdoptPet() // Method to initiate pet adoption. Should be changing status in list for each specific pet.
         {
-            didAdopt = true;           
+            didAdopt = true;
         }
 
         // Added this to meet requriements for an override method. Couldn't successfully call override method.
 
-        //public override string ClockIn()
-        //{
-        //  throw new NotImplementedException();
-        //}
+        public override void ClockIn()
+        {
+          Console.WriteLine("Clocked in.");
+        }
+
+        public override void CheckID()
+        {
+            Console.WriteLine("Looks like a valid ID card.");
+        }
 
     }
 }
