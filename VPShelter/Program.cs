@@ -63,11 +63,11 @@ namespace VPShelter
                     Console.WriteLine("Enter 1 to water all the pets.");
                     Console.WriteLine("Enter 2 to feed all the pets.");
                     Console.WriteLine("Enter 3 to play with a specific pet.");
-                    Console.WriteLine("Enter C to have your ID checked.");
-                    Console.WriteLine("Enter 4 to quit.");
+                    Console.WriteLine("Enter 4 to have your ID checked.");
+                    Console.WriteLine("Enter 5 to quit.");
                     volunteerMenu = (Console.ReadLine());
 
-                    if (volunteerMenu.Equals("C"))
+                    if (volunteerMenu.Equals("4"))
                     {
                         Volunteer tina = new Volunteer();
                         tina.CheckID();
@@ -110,7 +110,7 @@ namespace VPShelter
                         }
                     }
 
-                    if (volunteerMenu.Equals("4"))
+                    if (volunteerMenu.Equals("5"))
                     {
                         Console.WriteLine("Thanks again for volunteering. Have a great day!");
                         return;

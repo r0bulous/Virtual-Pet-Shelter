@@ -33,8 +33,3 @@ namespace VPShelter
     }
 }
 
-
-
-// NEED TO ADD An override method(How does a Manager do one of the Employee methods differently?).
-// DONE  An additional property(for example, Salary, YearsEmployed, or Department).
-// NEED TO ADD A method for adopting a pet.

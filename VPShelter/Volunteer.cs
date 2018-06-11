@@ -35,18 +35,8 @@ namespace VPShelter
 
         public override void CheckID()
         {
-            Console.WriteLine("That ID looks suspicious. Please forward it to a manager!");
+            Console.WriteLine("That ID looks suspicious. Please turn it to a manager!");
         }
     }
 
 }
-
-
-
-    
-
-
-// NEED TO DO: An override method(How does a Volunteer do one of the Employee methods differently?).
-// : An additional property(for example HoursAvailable, VolunteerType, or VolunteerSpecialty).
-// NEED TO DO: A method for feeding all of the pets. (HINT: Don't overthink this. It can return a status of "All pets have been fed.")
-// COMPLETE: A method for giving water to all of the pets(see above hint).
