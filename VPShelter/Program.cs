@@ -163,7 +163,7 @@ namespace VPShelter
                             Console.WriteLine();
                             Console.WriteLine("1: {0} is a {1} who {2} and lives off a diet of {3}.", VirtualPet.petList[0], VirtualPetDetails.petTypeList[0], VirtualPet.petDescriptList[0], VirtualPetDetails.petFoodList[0]);
                             Console.WriteLine("2: {0} is a {1} who {2} and lives off a diet of {3}.", VirtualPet.petList[1], VirtualPetDetails.petTypeList[1], VirtualPet.petDescriptList[1], VirtualPetDetails.petFoodList[1]);
-                            Console.WriteLine("1: {0} is a {1} who {2} and lives off a diet of {3}.", VirtualPet.petList[2], VirtualPetDetails.petTypeList[2], VirtualPet.petDescriptList[2], VirtualPetDetails.petFoodList[2]);
+                            Console.WriteLine("3: {0} is a {1} who {2} and lives off a diet of {3}.", VirtualPet.petList[2], VirtualPetDetails.petTypeList[2], VirtualPet.petDescriptList[2], VirtualPetDetails.petFoodList[2]);
                             Console.WriteLine("Which pet is the client most interested in? Enter 1, 2, or 3.");
                             Console.Write("> ");
                             adoptChoice = (Console.ReadLine());
@@ -172,25 +172,25 @@ namespace VPShelter
                             if (adoptChoice.Equals("1"))
                             {
                                 Console.WriteLine("You successfully placed {0}. Enjoy the rest of your day!", (VirtualPet.petList[0]));
-                                Manager.AdoptPet(); // Calls AdoptPet method in Manager class
+                                Manager.AdoptPet0(); // Calls AdoptPet method in Manager class
                             }
 
-                            if (adoptChoice.Equals("2"))
-                            {
-                                Console.WriteLine("You adopted out {0}. Nice work!", (VirtualPet.petList[0]));
-                                Manager.AdoptPet(); // Calls AdoptPet method in Manager class
-                            }
-
-
-                            if (adoptChoice.Equals("3"))
-                            {
-                                Console.WriteLine("You adopted {0}. Maybe it's time for a nap?", (VirtualPet.petList[2]));
-                                Manager.AdoptPet(); // Calls AdoptPet method in Manager class
-                            }
-
-
-
+                        if (adoptChoice.Equals("2"))
+                        {
+                            Console.WriteLine("You adopted out {0}. Nice work!", (VirtualPet.petList[0]));
+                            Manager.AdoptPet1(); // Calls AdoptPet method in Manager class
                         }
+
+
+                        if (adoptChoice.Equals("3"))
+                        {
+                            Console.WriteLine("You adopted {0}. Maybe it's time for a nap?", (VirtualPet.petList[2]));
+                            Manager.AdoptPet2(); // Calls AdoptPet method in Manager class
+                        }
+
+
+
+                    }
                         if (managerMenu.Equals("4"))
                         {
                             Console.WriteLine("Have a great day!");

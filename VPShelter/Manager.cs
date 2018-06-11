@@ -13,10 +13,21 @@ namespace VPShelter
         public static bool didAdopt;
 
 
-        public static void AdoptPet() // Method to initiate pet adoption. Should be changing status in list for each specific pet.
+        public static void AdoptPet0() // Method to initiate pet 0 adoption. Should be changing status in list for each specific pet.
         {
-            didAdopt = true;
+            VirtualPetShelter.adoptedList[0] = true;
         }
+
+        public static void AdoptPet1() // Method to initiate pet 0 adoption. Should be changing status in list for each specific pet.
+        {
+            VirtualPetShelter.adoptedList[1] = true;
+        }
+
+        public static void AdoptPet2() // Method to initiate pet 0 adoption. Should be changing status in list for each specific pet.
+        {
+            VirtualPetShelter.adoptedList[2] = true;
+        }
+
 
         // Added this to meet requriements for an override method. Couldn't successfully call override method.
 
